@@ -15,6 +15,9 @@
         "./src/*"
       ] // 路径映射，相对于baseUrl
     },
+    "types": [
+      "unplugin-vue-define-options/macros-global" /* dfineOptions */
+    ],
     "lib": [
       "ESNext",
       "DOM"
@@ -33,5 +36,10 @@
     {
       "path": "./tsconfig.node.json"
     }
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.js"
   ]
 }
