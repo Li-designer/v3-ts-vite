@@ -4,7 +4,6 @@ import { type RouteComponent, type RouteLocationNormalized } from "vue-router";
  * 全局类型声明，无需引入直接在 `.vue` 、`.ts` 、`.tsx` 文件使用即可获得类型提示
  */
 declare global {
-
   interface toRouteType extends RouteLocationNormalized {
     meta: {
       auth?: Array<string>;
@@ -12,14 +11,13 @@ declare global {
       /* tabBar自定义样式 */
       navClass?: string;
       /* 动态头部导航栏标题 */
-      cacheTitle?: string
+      cacheTitle?: string;
     };
   }
 
-
   /**
-  * @description 整体路由配置表（包括完整子路由）
-  */
+   * @description 整体路由配置表（包括完整子路由）
+   */
   interface RouteConfigsTable {
     /** 路由地址 `必填` */
     path: string;
@@ -39,10 +37,9 @@ declare global {
       /* tabBar自定义样式 */
       navClass?: string;
       /* 动态头部导航栏标题 */
-      cacheTitle?: string
+      cacheTitle?: string;
     };
     /** 子路由配置项 */
     children?: Array<RouteConfigsTable>;
   }
-
 }

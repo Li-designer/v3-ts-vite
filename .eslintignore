@@ -3,6 +3,6 @@ dist
 *.d.ts
 /src/assets
 package.json
-.eslintrc.js
-.prettierrc.js
+.eslintrc.cjs
+.prettierrc.cjs
 postcss.config.cjs

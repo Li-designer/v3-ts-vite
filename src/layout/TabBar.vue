@@ -16,9 +16,8 @@
 <script setup lang="ts">
 const active = ref(0);
 const icon = {
-  active: 'https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png',
-  inactive:
-    'https://fastly.jsdelivr.net/npm/@vant/assets/user-inactive.png',
+  active: "https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png",
+  inactive: "https://fastly.jsdelivr.net/npm/@vant/assets/user-inactive.png"
 };
 </script>
 

@@ -7,19 +7,16 @@
 </template>
 
 <script setup lang="ts">
-import { routes } from '@/router'
-
+import { routes } from "@/router";
 
 const keepAliveList = computed(() => {
-  return filterKeepAliveRoute(routes)
-})
-
+  return filterKeepAliveRoute(routes);
+});
 
 //  todo 过滤keepAlive路由
 const filterKeepAliveRoute = (routes: Array<RouteConfigsTable>): Array<string> => {
-  return ["HomePage"]
-}
-
+  return ["HomePage"];
+};
 </script>
 
 <style scoped></style>

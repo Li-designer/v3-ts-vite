@@ -11,35 +11,18 @@
     "esModuleInterop": true,
     "baseUrl": "./", // 解析非相对模块的基础地址，默认是当前目录
     "paths": {
-      "@/*": [
-        "./src/*"
-      ] // 路径映射，相对于baseUrl
+      "@/*": ["./src/*"] // 路径映射，相对于baseUrl
     },
-    "types": [
-      "unplugin-vue-define-options/macros-global" /* dfineOptions */
-    ],
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "types": ["unplugin-vue-define-options/macros-global" /* dfineOptions */],
+    "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "./auto-imports.d.ts"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "./auto-imports.d.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
   ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.js"
-  ]
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }

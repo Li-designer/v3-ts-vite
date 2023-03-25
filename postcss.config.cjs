@@ -1,12 +1,11 @@
-
 module.exports = {
   plugins: {
     // postcss-pxtorem 插件的版本需要 >= 5.0.0
-    'postcss-pxtorem': {
+    "postcss-pxtorem": {
       rootValue({ file }) {
-        return file.indexOf('vant') !== -1 ? 37.5 : 75;
+        return file.indexOf("vant") !== -1 ? 37.5 : 75;
       },
-      propList: ['*'],
-    },
-  },
+      propList: ["*"]
+    }
+  }
 };
