@@ -16,7 +16,7 @@ export const routes = [
       {
         path: "/homePage",
         name: "OnePage",
-        meta: { title: "主页" },
+        meta: { title: "主页", keepAlive: true },
         component: () => import("@/view/Home/index.vue")
       }
     ]

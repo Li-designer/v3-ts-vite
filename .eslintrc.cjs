@@ -8,7 +8,7 @@ module.exports = {
     {
       files: ["*.ts", "*.vue"],
       rules: {
-        "no-undef": "off"
+        "no-undef": "error"
       }
     },
     {
@@ -46,7 +46,7 @@ module.exports = {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "arrow-spacing": "off",
+    "arrow-spacing": ["error", { "before": true, "after": true }],
     "vue/html-self-closing": [
       "error",
       {
@@ -60,13 +60,6 @@ module.exports = {
       }
     ],
     "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        argsIgnorePattern: "^_",
-        varsIgnorePattern: "^_"
-      }
-    ],
-    "no-unused-vars": [
       "error",
       {
         argsIgnorePattern: "^_",
