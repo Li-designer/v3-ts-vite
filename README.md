@@ -2,6 +2,7 @@
 
 ## 项目结构
 
+```sh
 📁v3-ts-vite
 ├─ 📄pnpm-lock.yaml
 ├─ 📄.env.production
@@ -39,3 +40,4 @@
 │  ├─ 📁store
 │  ├─ 📁router
 │  └─ 📁view
+```sh
