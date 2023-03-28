@@ -8,7 +8,7 @@ module.exports = {
     {
       files: ["*.ts", "*.vue"],
       rules: {
-        "no-undef": "error"
+        "no-undef": "off",
       }
     },
     {
@@ -47,6 +47,13 @@ module.exports = {
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "arrow-spacing": ["error", { "before": true, "after": true }],
+    "indent": ['error', 2],
+    'vue/html-closing-bracket-spacing': ['error', {
+      'startTag': 'never',
+      'endTag': 'never',
+      'selfClosingTag': 'always',
+    }],
+    "no-useless-catch": "off",
     "vue/html-self-closing": [
       "error",
       {

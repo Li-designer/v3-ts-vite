@@ -1,11 +1,3 @@
-<template>
-  <router-view v-slot="{ Component, route }">
-    <keep-alive :include="keepAliveList">
-      <component :is="Component" :key="route.path" />
-    </keep-alive>
-  </router-view>
-</template>
-
 <script setup lang="ts">
 import { routes } from "@/router";
 
@@ -24,5 +16,12 @@ const filterKeepAliveRoute = (routes: Array<RouteConfigsTable>) => {
   return result;
 };
 </script>
+<template>
+  <router-view v-slot="{ Component, route }">
+    <keep-alive :include="keepAliveList">
+      <component :is="Component" :key="route.path" />
+    </keep-alive>
+  </router-view>
+</template>
 
 <style scoped></style>
