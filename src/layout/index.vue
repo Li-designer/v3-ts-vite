@@ -12,4 +12,8 @@ import TabBar from "./TabBar.vue";
 import NavBar from "./Nav.vue";
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.app-contian {
+  padding-top: 92px;
+}
+</style>

@@ -3,6 +3,7 @@ import { userLogin } from "@/api/login";
 import useInterval from "@/hooks/useInterval";
 import useRequest from "@/hooks/useRequest";
 const time = ref<string | Date>("");
+const value = ref<string>("");
 let interval: { stop: Function };
 
 const clickFunStop = () => {
@@ -24,13 +25,15 @@ const clickFunRe = () => {
 </script>
 
 <template>
-  <div>
+  <div class="homePage">
     <h4>自定义hooks:useInterval</h4>
     <van-button plain type="primary" @click="clickFun">开始</van-button>
     <van-button plain type="primary" @click="clickFunStop">停止</van-button>
     <p>{{ time }}</p>
     <h4>自定义hooks:useRequest</h4>
     <van-button plain type="primary" @click="clickFunRe">发送测试</van-button>
+    <h4>自定义hooks:useDebounce</h4>
+    <van-search v-model="value" placeholder="请输入搜索关键词" />
   </div>
 </template>
 

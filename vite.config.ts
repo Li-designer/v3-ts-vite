@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import legacy from "@vitejs/plugin-legacy";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import DefineOptions from "unplugin-vue-define-options/vite";
@@ -8,6 +9,9 @@ export default defineConfig({
   plugins: [
     vue(),
     DefineOptions(),
+    legacy({
+      targets: ["defaults", "not IE 11"]
+    }),
     AutoImport({
       // targets to transform
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -35,6 +39,13 @@ export default defineConfig({
       dts: "./auto-imports.d.ts"
     })
   ],
+  css: {
+    preprocessorOptions: {
+      sass: {
+        additionalData: `@import "./src/styles/mixin.scss";`
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src") // src 路径
