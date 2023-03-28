@@ -8,7 +8,6 @@ let interval: { stop: Function };
 
 const clickFunStop = () => {
   interval.stop();
-  console.log(interval);
   time.value = "";
 };
 
@@ -37,4 +36,7 @@ const clickFunRe = () => {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.homePage {
+}
+</style>

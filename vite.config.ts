@@ -39,16 +39,16 @@ export default defineConfig({
       dts: "./auto-imports.d.ts"
     })
   ],
-  css: {
-    preprocessorOptions: {
-      sass: {
-        additionalData: `@import "./src/styles/mixin.scss";`
-      }
-    }
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src") // src 路径
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "${path.resolve(__dirname, "src/styles/mixins.scss")}";`
+      }
     }
   }
 });
