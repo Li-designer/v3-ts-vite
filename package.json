@@ -18,11 +18,14 @@
     "axios": "^1.3.4",
     "less": "^4.1.3",
     "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
     "pinia": "^2.0.33",
     "process": "^0.11.10",
     "sass": "^1.59.3",
     "vant": "^4.1.1",
+    "vconsole": "^3.15.0",
     "vue": "^3.2.47",
+    "vue-hooks-plus": "^1.6.4",
     "vue-router": "4"
   },
   "browserslist": [
@@ -36,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "@vitejs/plugin-vue": "^4.1.0",
+    "@vue-hooks-plus/resolvers": "^1.2.4",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -43,11 +47,14 @@
     "postcss": "^8.4.21",
     "postcss-pxtorem": "^6.0.0",
     "prettier": "^2.8.7",
+    "terser": "^5.16.8",
     "typescript": "^4.9.3",
     "unplugin-auto-import": "^0.15.1",
     "unplugin-vue-define-options": "^1.3.2",
     "vite": "^4.2.0",
     "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-remove-console": "^2.1.0",
+    "vite-plugin-vconsole": "^1.3.1",
     "vue-tsc": "^1.2.0"
   }
 }

@@ -12,6 +12,7 @@ export default async function useRequest(apiRequest: Function, data?: Object) {
   } catch (e) {
     throw e;
   } finally {
+    await load; // 等待loading的Promise解决
     load.close();
   }
 }

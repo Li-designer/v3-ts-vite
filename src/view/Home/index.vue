@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { userLogin } from "@/api/login";
+
 import useInterval from "@/hooks/useInterval";
 import useRequest from "@/hooks/useRequest";
 const time = ref<string | Date>("");
-const value = ref<string>("");
-let interval: { stop: Function };
+const searchValue = ref<string>("");
 
+let interval: { stop: Function };
 const clickFunStop = () => {
   interval.stop();
   time.value = "";
@@ -16,7 +17,6 @@ const clickFun = () => {
     time.value = new Date();
   }, 1000);
 };
-
 const clickFunRe = () => {
   const res = useRequest(userLogin, { username: "lj", password: 1111 });
   console.log(res);
@@ -32,7 +32,8 @@ const clickFunRe = () => {
     <h4>自定义hooks:useRequest</h4>
     <van-button plain type="primary" @click="clickFunRe">发送测试</van-button>
     <h4>自定义hooks:useDebounce</h4>
-    <van-search v-model="value" placeholder="请输入搜索关键词" />
+    <van-search v-model="searchValue" placeholder="请输入搜索关键词" />
+    <!-- <p>{{ backValue }}</p> -->
   </div>
 </template>
 
