@@ -3,8 +3,6 @@ import "nprogress/nprogress.css";
 import router from "./router";
 const TITLE = "v3H5模板";
 
-declare const module: any;
-
 const getPageTitle = (key: unknown) => {
   const hasKey = `${key}`;
   if (hasKey) {
