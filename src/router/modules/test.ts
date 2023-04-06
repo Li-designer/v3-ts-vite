@@ -11,7 +11,9 @@ const test = {
       name: "TestPageOne",
       meta: {
         title: "测试主页",
-        keepAlive: true
+        keepAlive: true,
+        showTab: false,
+        showNav: true
       },
       component: () => import("@/view/Test/index.vue")
     }

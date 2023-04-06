@@ -5,12 +5,22 @@ import { type RouteComponent, type RouteLocationNormalized } from "vue-router";
 declare global {
   interface toRouteType extends RouteLocationNormalized {
     meta: {
+      /* 角色权限 */
       auth?: Array<string>;
+      /** 菜单名称 `必填` */
+      title: string;
+      /* 缓存页面 */
       keepAlive?: boolean;
       /* tabBar自定义样式 */
       navClass?: string;
       /* 动态头部导航栏标题 */
       cacheTitle?: string;
+      /* 是否显示tab栏 */
+      showTab?: Boolean;
+      /* 是否显示头部 */
+      showNav?: Boolean;
+      /* 是否显示左箭头 */
+      showLeftArrow?: Boolean
     };
   }
 
@@ -37,6 +47,12 @@ declare global {
       navClass?: string;
       /* 动态头部导航栏标题 */
       cacheTitle?: string;
+      /* 是否显示tab栏 */
+      showTab?: Boolean;
+      /* 是否显示头部 */
+      showNav?: Boolean;
+      /* 是否显示左箭头 */
+      showLeftArrow?: Boolean
     };
     /** 子路由配置项 */
     children?: Array<RouteConfigsTable>;
@@ -49,7 +65,8 @@ declare global {
   /**
    * @description 全局属性挂载
    */
-  interface GLOBAL_PROPERTIES {
-    $toast: () => Function
+  interface ComponentCustomProperties {
+    $toast: () => Function,
+    $bus: () => Function
   }
 }

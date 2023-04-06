@@ -3,9 +3,12 @@ import { userLogin } from "@/api/login";
 import useInterval from "@/hooks/useInterval";
 import useRequest from "@/hooks/useRequest";
 const time = ref<string | Date>("");
+const { appContext } = getCurrentInstance();
 
 const shallowValue = shallowRef({ count: 1 });
-
+const editTitle = () => {
+  appContext.config.globalProperties.$bus.emit("changeTitle", "主页");
+};
 let interval: { stop: Function };
 const clickFunStop = () => {
   interval.stop();
@@ -47,6 +50,10 @@ const clickFixObj = () => {
       <h4>shallowRef:{{ shallowValue }}</h4>
       <van-button plain type="primary" @click="clickFix">修改count</van-button>
       <van-button plain type="primary" @click="clickFixObj">修改OBJ</van-button>
+    </div>
+    <div class="module">
+      <h4>修改标题</h4>
+      <van-button plain type="primary" @click="editTitle">修改</van-button>
     </div>
   </div>
 </template>

@@ -8,9 +8,15 @@ const LayOut = () => import("@/layout/index.vue");
 const modules: Record<string, any> = import.meta.glob(["./modules/**/*.ts"], {
   eager: true
 });
-
+/**
+ * @cacheTitle 是否为动态标题
+ * @showLeftArrow 是否显示返回的左箭头
+ * @keepAlive 是否缓存
+ * @showNav 是否显示头部
+ * @showTab 是否显示底部tab
+ */
 export const routes = [
-  // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
+  // 将匹配所有内容并将其放在 `route.params.pathMatch` 下
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
   { path: "/", name: "Home", redirect: "/home" },
   {
@@ -22,7 +28,7 @@ export const routes = [
       {
         path: "/homePage",
         name: "OnePage",
-        meta: { title: "主页", keepAlive: true },
+        meta: { title: "主页", showLeftArrow: false, keepAlive: true, showNav: true, showTab: true, cacheTitle: true },
         component: () => import("@/view/Home/index.vue")
       }
     ]
