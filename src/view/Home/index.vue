@@ -3,7 +3,7 @@ import { userLogin } from "@/api/login";
 import useInterval from "@/hooks/useInterval";
 import useRequest from "@/hooks/useRequest";
 const time = ref<string | Date>("");
-const { appContext } = getCurrentInstance();
+const { appContext }: any = getCurrentInstance();
 
 const shallowValue = shallowRef({ count: 1 });
 const editTitle = () => {

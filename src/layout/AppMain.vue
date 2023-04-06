@@ -6,9 +6,12 @@ const keepAliveList = computed(() => {
 });
 
 // 过滤keepAlive路由
-const filterKeepAliveRoute = (routes: Array<RouteConfigsTable>) => {
-  const result = routes.reduce((acc: any[], cur) => {
-    if (cur.children && cur.children.some(child => child.meta && child.meta.keepAlive)) {
+const filterKeepAliveRoute = (routes: any) => {
+  const result = routes.reduce((acc: any[], cur: { children: any[]; name: any }) => {
+    if (
+      cur.children &&
+      cur.children.some((child: { meta: { keepAlive: any } }) => child.meta && child.meta.keepAlive)
+    ) {
       acc.push(cur.name);
     }
     return acc;

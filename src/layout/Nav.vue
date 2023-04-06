@@ -2,7 +2,7 @@
 const route = useRoute();
 const title = ref<string>("");
 const onClickLeft = () => history.back();
-const { appContext } = getCurrentInstance();
+const { appContext }: any = getCurrentInstance();
 /* 是否显示左边箭头 */
 const isShowLeftArrow: ComputedRef = computed(() => {
   return route.meta.showLeftArrow || true;
