@@ -10,7 +10,7 @@ declare global {
       /** 菜单名称 `必填` */
       title: string;
       /* 缓存页面 */
-      keepAlive?: boolean;
+      keepAlive?: Boolean;
       /* tabBar自定义样式 */
       navClass?: string;
       /* 动态头部导航栏标题 */
