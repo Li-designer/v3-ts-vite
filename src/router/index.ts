@@ -14,6 +14,7 @@ const modules: Record<string, any> = import.meta.glob(["./modules/**/*.ts"], {
  * @keepAlive 是否缓存
  * @showNav 是否显示头部
  * @showTab 是否显示底部tab
+ * @navClass 头部导航栏类名
  */
 export const routes = [
   // 将匹配所有内容并将其放在 `route.params.pathMatch` 下
