@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const route = useRoute();
 const title = ref<string>("");
 const onClickLeft = () => history.back();
@@ -21,7 +21,7 @@ const pageTitle: ComputedRef = computed(() => {
 </script>
 
 <template>
-  <van-nav-bar :left-arrow="isShowLeftArrow" :title="pageTitle" @click-left="onClickLeft" fixed>
+  <van-nav-bar :left-arrow="isShowLeftArrow" :title="pageTitle" fixed @click-left="onClickLeft">
     <template #right>
       <slot name="right" />
     </template>

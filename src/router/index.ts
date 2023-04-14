@@ -29,7 +29,14 @@ export const routes = [
       {
         path: "/homePage",
         name: "OnePage",
-        meta: { title: "主页", showLeftArrow: false, keepAlive: true, showNav: true, showTab: true, cacheTitle: false },
+        meta: {
+          title: "主页",
+          showLeftArrow: false,
+          keepAlive: true,
+          showNav: true,
+          showTab: true,
+          cacheTitle: false
+        },
         component: () => import("@/view/Home/index.vue")
       }
     ]
