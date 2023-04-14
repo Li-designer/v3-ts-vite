@@ -3,21 +3,20 @@ import AutoImport from "unplugin-auto-import/vite";
 import DefineOptions from "unplugin-vue-define-options/vite";
 // import { viteVConsole } from "vite-plugin-vconsole";
 import { visualizer } from "rollup-plugin-visualizer";
-import { UserConfigExport, ConfigEnv } from "vite";
+import { UserConfigExport, ConfigEnv, loadEnv } from "vite";
 import path, { resolve } from "path";
 import removeConsole from "vite-plugin-remove-console";
 import * as process from "process";
-
 /** 当前执行node命令时文件夹的地址（工作目录） */
 const root: string = process.cwd();
 /** 路径查找 */
 const pathResolve = (dir: string): string => {
   return resolve(__dirname, ".", dir);
 };
-console.log(process.env, "ENV");
+// console.log(process.env, process.env.VITE_PORT, "ENV");
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
-  // @ts-ignore
+  const env = loadEnv(mode, root, "");
   return {
     base: command !== "serve" ? "./" : "/",
     root,
