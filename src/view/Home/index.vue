@@ -7,7 +7,8 @@ const { appContext }: any = getCurrentInstance();
 
 const shallowValue = shallowRef({ count: 1 });
 const editTitle = () => {
-  appContext.config.globalProperties.$bus.emit("changeTitle", "主页");
+  // route.meta.cacheTitle为true时可修改标题,为false显示meta.title
+  appContext.config.globalProperties.$bus.emit("changeTitle", "修改标题");
 };
 let interval: { stop: Function };
 const clickFunStop = () => {
