@@ -2,9 +2,6 @@
 import { useCounterStore } from "@/store/count";
 
 defineProps<{ msg: string }>();
-
-const count = ref(0);
-const arr = reactive([1, 2, 3]);
 const store = useCounterStore();
 const plusNum = () => {
   store.increment();

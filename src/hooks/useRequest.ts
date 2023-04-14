@@ -1,4 +1,4 @@
-import {showLoadingToast} from "vant";
+import { showLoadingToast } from "vant";
 
 export default async function useRequest(apiRequest: Function, data?: Object) {
   const load = showLoadingToast({
@@ -7,7 +7,7 @@ export default async function useRequest(apiRequest: Function, data?: Object) {
     loadingType: "spinner"
   });
   try {
-    return await apiRequest({...data});
+    return await apiRequest({ ...data });
   } catch (e) {
     throw e;
   } finally {
