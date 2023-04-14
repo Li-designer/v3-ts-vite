@@ -38,7 +38,7 @@ module.exports = {
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "vue/no-v-html": "off",
         "multiline-ternary": ["error", "never"],
-        "max-len": ["error", { "code": 100, "tabWidth": 4 }],
+        "max-len": ["error", { "code": 130, "tabWidth": 4 }],
         "vue/require-default-prop": "off",
         "vue/require-explicit-emits": "off",
         "vue/multi-word-component-names": "off",
