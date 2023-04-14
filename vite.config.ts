@@ -1,11 +1,12 @@
-import legacy from "@vitejs/plugin-legacy";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import DefineOptions from "unplugin-vue-define-options/vite";
-import { viteVConsole } from "vite-plugin-vconsole";
+// import { viteVConsole } from "vite-plugin-vconsole";
+import { visualizer } from "rollup-plugin-visualizer";
 import { UserConfigExport, ConfigEnv } from "vite";
 import path, { resolve } from "path";
 import removeConsole from "vite-plugin-remove-console";
+import * as process from "process";
 
 /** 当前执行node命令时文件夹的地址（工作目录） */
 const root: string = process.cwd();
@@ -13,9 +14,10 @@ const root: string = process.cwd();
 const pathResolve = (dir: string): string => {
   return resolve(__dirname, ".", dir);
 };
-
+console.log(process.env, "ENV");
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
+  // @ts-ignore
   return {
     base: command !== "serve" ? "./" : "/",
     root,
@@ -40,19 +42,21 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       vue(),
       DefineOptions(),
       removeConsole(),
-      legacy({
-        targets: ["defaults", "not IE 11"]
+      visualizer({
+        emitFile: false,
+        filename: "analyse.html", //分析图生成的文件名
+        open: true //如果存在本地服务端口，将在打包后自动展示
       }),
-      viteVConsole({
-        entry: path.resolve("src/main.ts"), // 或者可以使用这个配置: [path.resolve('src/main.ts')]
-        // localEnabled: command === "serve",
-        localEnabled: command === "serve",
-        enabled: process.env.NODE_ENV === "production",
-        config: {
-          maxLogNumber: 1000,
-          theme: "dark"
-        }
-      }),
+      // viteVConsole
+      // viteVConsole({
+      //   entry: path.resolve("src/main.ts"), // 或者可以使用这个配置: [path.resolve('src/main.ts')]
+      //   localEnabled: mode !== "prod",
+      //   enabled: mode !== "prod",
+      //   config: {
+      //     maxLogNumber: 1000,
+      //     theme: "dark"
+      //   }
+      // }),
       AutoImport({
         // targets to transform
         include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/],

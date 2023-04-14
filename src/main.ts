@@ -11,10 +11,6 @@ import { createPinia } from "pinia";
 import BusPlugin from "@/utils/bus";
 const app = createApp(App);
 
-if (import.meta?.env?.NODE_ENV === "development") {
-  import("vconsole");
-}
-
 const pinia = createPinia();
 
 app

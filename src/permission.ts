@@ -2,7 +2,7 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import router from "./router";
 const TITLE = "v3H5模板";
-
+NProgress.configure({ showSpinner: false });
 const getPageTitle = (key: unknown) => {
   const hasKey = `${key}`;
   if (hasKey) {
