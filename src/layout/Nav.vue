@@ -5,7 +5,7 @@ const onClickLeft = () => history.back();
 const { appContext }: any = getCurrentInstance();
 /* 是否显示左边箭头 */
 const isShowLeftArrow: ComputedRef = computed(() => {
-  return route.meta.showLeftArrow || true;
+  return route.meta.showLeftArrow;
 });
 /* 标题修改 */
 const pageTitle: ComputedRef = computed(() => {
