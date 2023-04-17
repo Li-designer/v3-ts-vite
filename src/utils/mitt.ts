@@ -1,3 +1,8 @@
+import type { Emitter } from "mitt";
 import mitt from "mitt";
-const Mitt = mitt();
-export default Mitt;
+
+type Events = {
+  changeTitle: string;
+};
+
+export const emitter: Emitter<Events> = mitt<Events>();

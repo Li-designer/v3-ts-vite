@@ -6,6 +6,13 @@
 ## 设计稿尺寸
 - `750px`
 
+## 类型定义
+- 全局类型定义在`@/types/global`
+- 使用`namespace`,例:api文件类型定义`@/types/api`
+
+## 自动引入 api
+-  `vue`,`vue-router`,`pinia` 无需手动引入
+
 ## 项目结构
 
 ```sh
