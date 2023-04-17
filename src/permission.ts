@@ -19,7 +19,7 @@ router.beforeEach(async (to, from, next) => {
   // const getRole = readLocal("roleCode");
   // const hasToken = getToken();
   // ! 权限
-  // NProgress.start();
+  NProgress.start();
   // if (whiteList.indexOf(to.path) !== -1) {
   next();
   // }
@@ -45,6 +45,6 @@ router.beforeEach(async (to, from, next) => {
 });
 
 router.afterEach(to => {
-  // NProgress.done();
+  NProgress.done();
   document.title = getPageTitle(to.meta.title);
 });
