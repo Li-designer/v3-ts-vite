@@ -1,7 +1,9 @@
 /**
  * api文件类型
  */
-interface LOGIN {
-  username: string;
-  passward: string
+declare namespace api {
+  interface LOGIN {
+    username: string;
+    password: string
+  }
 }

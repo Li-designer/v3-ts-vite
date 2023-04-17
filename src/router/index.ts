@@ -19,7 +19,19 @@ const modules: Record<string, any> = import.meta.glob(["./modules/**/*.ts"], {
 export const routes = [
   // 将匹配所有内容并将其放在 `route.params.pathMatch` 下
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
-  { path: "/", name: "Home", redirect: "/home" },
+  {
+    path: "/",
+    name: "Page",
+    redirect: "/login",
+    children: [
+      {
+        path: "/login",
+        name: "Login",
+        meta: { title: "登录" },
+        component: () => import("@/view/login/index.vue")
+      }
+    ]
+  },
   {
     path: "/home",
     name: "HomePage",

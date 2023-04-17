@@ -12,18 +12,19 @@ const getPageTitle = (key: unknown) => {
   return `${TITLE}`;
 };
 
-// const whiteList: string[] = ["/login", "/home/page"];
+const whiteList: string[] = ["/login"];
 
 /* 权限设置 */
 router.beforeEach(async (to, from, next) => {
   // const getRole = readLocal("roleCode");
   // const hasToken = getToken();
   // ! 权限
-  NProgress.start();
+  // NProgress.start();
+  // if (whiteList.indexOf(to.path) !== -1) {
   next();
-  /*   if (whiteList.indexOf(to.path) !== -1) {
-    next();
-  } else {
+  // }
+  /*
+  else {
     if (hasToken) {
       if (to.meta.auth && to.meta.auth.indexOf(getRole) === -1) {
         next(from.path);
@@ -44,6 +45,6 @@ router.beforeEach(async (to, from, next) => {
 });
 
 router.afterEach(to => {
-  NProgress.done();
+  // NProgress.done();
   document.title = getPageTitle(to.meta.title);
 });

@@ -1,9 +1,10 @@
 module.exports = {
+    root: true,
     env: {
         browser: true,
         es2021: true
     },
-    extends: ["eslint:recommended", "plugin:vue/vue3-essential", "plugin:@typescript-eslint/recommended"],
+    extends: ["eslint:recommended", "plugin:vue/vue3-essential", "plugin:@typescript-eslint/recommended", 'plugin:vue/vue3-recommended', 'prettier', 'plugin:prettier/recommended'],
     overrides: [
         {
             files: ["*.ts", "*.vue"],
@@ -37,7 +38,7 @@ module.exports = {
         "no-debugger": "warn",
         "vue/no-v-html": "off",
         "multiline-ternary": ["error", "never"],
-        "max-len": ["error", { "code": 130, "tabWidth": 4 }],
+        "max-len": ["error", {"code": 130, "tabWidth": 4}],
         "vue/require-default-prop": "off",
         "vue/require-explicit-emits": "off",
         "vue/multi-word-component-names": "off",
@@ -48,7 +49,6 @@ module.exports = {
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "arrow-spacing": ["error", {"before": true, "after": true}],
-        "indent": ['error', 2],
         'vue/html-closing-bracket-spacing': ['error', {
             'startTag': 'never',
             'endTag': 'never',

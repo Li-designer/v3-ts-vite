@@ -1,4 +1,5 @@
-import { type RouteComponent, type RouteLocationNormalized } from "vue-router";
+import {type RouteComponent, type RouteLocationNormalized} from "vue-router";
+
 /**
  * 全局类型声明，无需引入直接在 `.vue` 、`.ts` 、`.tsx` 文件使用即可获得类型提示
  */
@@ -57,6 +58,7 @@ declare global {
     /** 子路由配置项 */
     children?: Array<RouteConfigsTable>;
   }
+
   /**
    *@description 错误状态码
    */
