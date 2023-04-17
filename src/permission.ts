@@ -1,6 +1,8 @@
 import NProgress from "nprogress";
+import { showNotify } from "vant";
 import "nprogress/nprogress.css";
 import router from "./router";
+import { getLocal, getToken } from "@/utils/save";
 const TITLE = "v3H5模板";
 NProgress.configure({ showSpinner: false });
 const getPageTitle = (key: unknown) => {
@@ -15,20 +17,18 @@ const getPageTitle = (key: unknown) => {
 const whiteList: string[] = ["/login"];
 
 /* 权限设置 */
-router.beforeEach(async (to, from, next) => {
-  // const getRole = readLocal("roleCode");
-  // const hasToken = getToken();
+router.beforeEach((to: toRouteType, from, next) => {
+  const getRole = getLocal("role") || "noAccess";
+  const hasToken = getToken();
   // ! 权限
   NProgress.start();
-  // if (whiteList.indexOf(to.path) !== -1) {
-  next();
-  // }
-  /*
-  else {
+  if (whiteList.indexOf(to.path) !== -1) {
+    next();
+  } else {
     if (hasToken) {
       if (to.meta.auth && to.meta.auth.indexOf(getRole) === -1) {
         next(from.path);
-        Notify({ type: "danger", message: "没有权限!" });
+        showNotify({ type: "danger", message: "没有权限!" });
         NProgress.done();
       } else if (!to.meta.auth && to.name) {
         next();
@@ -41,7 +41,7 @@ router.beforeEach(async (to, from, next) => {
       next(`/login`);
       NProgress.done();
     }
-  } */
+  }
 });
 
 router.afterEach(to => {

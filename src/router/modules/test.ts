@@ -10,10 +10,11 @@ const test = {
       path: "/testPage",
       name: "TestPageOne",
       meta: {
-        title: "测试主页",
+        title: "测试store",
         keepAlive: true,
         showTab: false,
-        showNav: true
+        showNav: true,
+        auth: ["Admin"]
       },
       component: () => import("@/view/Test/index.vue")
     }

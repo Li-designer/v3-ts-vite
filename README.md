@@ -3,6 +3,8 @@
 ## 更新`packahe.json`版本
 - `npm version patch`
 
+## 设计稿尺寸
+- `750px`
 
 ## 项目结构
 
@@ -25,7 +27,7 @@
 ├─ 📄vite.config.ts
 ├─ 📄.prettierrc.cjs
 ├─ 📄.env.development
-├─ 📄auto-imports.d.ts
+├─ 📄auto-imports.d.ts // vue,router,pinia自动引入
 ├─ 📁public
 │  └─ 📄vite.svg
 ├─ 📁src

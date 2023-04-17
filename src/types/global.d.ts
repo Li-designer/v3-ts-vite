@@ -7,9 +7,7 @@ declare global {
   interface toRouteType extends RouteLocationNormalized {
     meta: {
       /* 角色权限 */
-      auth?: Array<string>;
-      /** 菜单名称 `必填` */
-      title: string;
+      auth?: string[];
       /* 缓存页面 */
       keepAlive?: Boolean;
       /* tabBar自定义样式 */
@@ -43,7 +41,7 @@ declare global {
       /* 是否缓存页面 */
       keepAlive?: Boolean;
       /* 角色权限 */
-      auth?: Array<string>;
+      auth?: string[];
       /* tabBar自定义样式 */
       navClass?: string;
       /* 动态头部导航栏标题 */
@@ -70,5 +68,20 @@ declare global {
   interface ComponentCustomProperties {
     $toast: () => Function,
     $bus: () => Function
+  }
+
+  /**
+   * @description obj存储
+   */
+  interface SaveToLocalStorageParams {
+    name: string;
+    content: { [key: string | number | symbol]: any };
+  }
+  /**
+   * @description obj存储
+   */
+  interface SaveToLocalParams {
+    name: string;
+    content: any;
   }
 }

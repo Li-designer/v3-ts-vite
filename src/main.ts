@@ -6,7 +6,7 @@ import "@/styles/index.scss";
 import "amfe-flexible";
 import "vant/lib/index.css";
 import "@/permission";
-import { Button, Form, Field, NavBar, Search, Tabbar, TabbarItem, Toast, CellGroup } from "vant";
+import { Button, Form, Field, NavBar, Search, Tabbar, TabbarItem, Toast, CellGroup, Icon } from "vant";
 import { createPinia } from "pinia";
 import BusPlugin from "@/utils/bus";
 const app = createApp(App);
@@ -22,6 +22,7 @@ app
   .use(Field)
   .use(Search)
   .use(CellGroup)
+  .use(Icon)
   .use(Form)
   .use(router)
   .use(pinia)

@@ -1,10 +1,14 @@
 <script lang="ts" setup>
+  import { saveLocal, setToken } from "@/utils/save";
+
   const router = useRouter();
   const username = ref("admin");
   const password = ref("123456");
-  const onSubmit = (values: api.LOGIN) => {
+  const onSubmit = async (values: api.LOGIN) => {
     console.log("submit", values);
-    router.push({ path: "/home" });
+    await saveLocal({ name: "role", content: "Admin" });
+    await setToken("12345");
+    await router.push({ path: "/home" });
   };
 </script>
 <template>

@@ -3,7 +3,7 @@ import { Router, createRouter, createWebHashHistory } from "vue-router";
 const NotFound = () => import("@/layout/NotFound.vue");
 const LayOut = () => import("@/layout/index.vue");
 
-// 排除的文件 "!./modules/**/remaining.ts"
+// 排除的文件 "!./modules/**/remaining.ts",需拼接
 /* modules文件下的路由自动导入 */
 const modules: Record<string, any> = import.meta.glob(["./modules/**/*.ts"], {
   eager: true
@@ -27,7 +27,7 @@ export const routes = [
       {
         path: "/login",
         name: "Login",
-        meta: { title: "登录" },
+        meta: { title: "登录", auth: ["Admin"] },
         component: () => import("@/view/login/index.vue")
       }
     ]

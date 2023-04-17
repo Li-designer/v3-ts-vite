@@ -1,38 +1,38 @@
 <script setup lang="ts">
-import { userLogin } from "@/api/login";
-import useInterval from "@/hooks/useInterval";
-import useRequest from "@/hooks/useRequest";
-const time = ref<string | Date>("");
-const { appContext }: any = getCurrentInstance();
+  import { userLogin } from "@/api/login";
+  import useInterval from "@/hooks/useInterval";
+  import useRequest from "@/hooks/useRequest";
+  const time = ref<string | Date>("");
+  const { appContext }: any = getCurrentInstance();
 
-const shallowValue = shallowRef({ count: 1 });
-const editTitle = () => {
-  // route.meta.cacheTitle为true时可修改标题,为false显示meta.title
-  appContext.config.globalProperties.$bus.emit("changeTitle", "修改标题");
-};
-let interval: { stop: Function };
-const clickFunStop = () => {
-  interval.stop();
-  time.value = "";
-};
-
-const clickFun = () => {
-  interval = useInterval(() => {
-    time.value = new Date();
-  }, 1000);
-};
-const clickFunRe = () => {
-  const res = useRequest(userLogin, { username: "lj", password: 1111 });
-  console.log(res);
-};
-const clickFix = () => {
-  shallowValue.value.count = 2;
-};
-const clickFixObj = () => {
-  shallowValue.value = {
-    count: 5
+  const shallowValue = shallowRef({ count: 1 });
+  const editTitle = () => {
+    // route.meta.cacheTitle为true时可修改标题,为false显示meta.title
+    appContext.config.globalProperties.$bus.emit("changeTitle", "修改标题");
   };
-};
+  let interval: { stop: Function };
+  const clickFunStop = () => {
+    interval.stop();
+    time.value = "";
+  };
+
+  const clickFun = () => {
+    interval = useInterval(() => {
+      time.value = new Date();
+    }, 1000);
+  };
+  const clickFunRe = () => {
+    const res = useRequest(userLogin, { username: "lj", password: 1111 });
+    console.log(res);
+  };
+  const clickFix = () => {
+    shallowValue.value.count = 2;
+  };
+  const clickFixObj = () => {
+    shallowValue.value = {
+      count: 5
+    };
+  };
 </script>
 
 <template>
@@ -60,19 +60,19 @@ const clickFixObj = () => {
 </template>
 
 <style lang="scss" scoped>
-.homePage {
-  padding: 10px;
-  padding-bottom: 100px;
-  .module {
-    width: 100%;
-    min-height: 270px;
+  .homePage {
     padding: 10px;
-    background-color: #fff;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    h4 {
+    padding-bottom: 100px;
+    .module {
+      width: 100%;
+      min-height: 270px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 20px;
       margin-bottom: 20px;
+      h4 {
+        margin-bottom: 20px;
+      }
     }
   }
-}
 </style>
