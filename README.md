@@ -20,6 +20,9 @@
 ## VueHook Plus
 - https://inhiblab-core.gitee.io/docs/hooks/
 
+## 一键格式化
+- `npm run prettier`
+- `npm run lint`
 
 ## 项目结构
 
