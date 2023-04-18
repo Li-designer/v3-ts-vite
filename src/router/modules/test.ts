@@ -11,10 +11,9 @@ const test = {
       name: "TestPageOne",
       meta: {
         title: "store/vueHooksPlus",
-        keepAlive: true,
         showTab: false,
         showNav: true,
-        auth: ["Admin"]
+        auth: []
       },
       component: () => import("@/view/Test/index.vue")
     }

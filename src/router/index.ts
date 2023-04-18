@@ -15,6 +15,7 @@ const modules: Record<string, any> = import.meta.glob(["./modules/**/*.ts"], {
  * @showNav 是否显示头部
  * @showTab 是否显示底部tab
  * @navClass 头部导航栏类名
+ * @auth 默认有权限进入,设置权限(无权限:auth:[],Admin权限:auth:["Admin"])
  */
 export const routes = [
   // 将匹配所有内容并将其放在 `route.params.pathMatch` 下
@@ -27,7 +28,7 @@ export const routes = [
       {
         path: "/login",
         name: "Login",
-        meta: { title: "登录", auth: ["Admin"] },
+        meta: { title: "登录" },
         component: () => import("@/view/login/index.vue")
       }
     ]
@@ -47,7 +48,7 @@ export const routes = [
           keepAlive: true,
           showNav: true,
           showTab: true,
-          cacheTitle: false
+          auth: ["Admin"]
         },
         component: () => import("@/view/Home/index.vue")
       }
