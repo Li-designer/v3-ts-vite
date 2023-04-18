@@ -4,6 +4,6 @@
 declare namespace api {
   interface LOGIN {
     username: string;
-    password: string
+    password: string;
   }
 }

@@ -63,18 +63,18 @@
   height: 100%;
 }
 
-@mixin absolute($top:null, $right:null, $bottom:null, $left:null) {
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
   position: absolute;
-  @if ($left!="" & & $left!=null) {
+  @if ($left!= "" & & $left!=null) {
     left: $left;
   }
-  @if ($right!="" & & $right!=null) {
+  @if ($right!= "" & & $right!=null) {
     right: $right;
   }
-  @if ($top!="" & & $top!=null) {
+  @if ($top!= "" & & $top!=null) {
     top: $top;
   }
-  @if ($bottom!="" & & $bottom!=null) {
+  @if ($bottom!= "" & & $bottom!=null) {
     bottom: $bottom;
   }
 }
@@ -94,10 +94,9 @@
   line-height: $line-height;
 }
 
-
 @mixin backgroundImage($url) {
-	background-image: url($url);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
+  background-image: url($url);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

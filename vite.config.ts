@@ -7,6 +7,7 @@ import { UserConfigExport, ConfigEnv, loadEnv } from "vite";
 import path, { resolve } from "path";
 import removeConsole from "vite-plugin-remove-console";
 import * as process from "process";
+import { VueHooksPlusResolver } from "@vue-hooks-plus/resolvers";
 /** 当前执行node命令时文件夹的地址（工作目录） */
 const root: string = process.cwd();
 /** 路径查找 */
@@ -83,7 +84,8 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         // Filepath to generate corresponding .d.ts file.
         // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
         // Set `false` to disable.
-        dts: "./auto-imports.d.ts"
+        dts: "./auto-imports.d.ts",
+        resolvers: [VueHooksPlusResolver()]
       })
     ],
     resolve: {

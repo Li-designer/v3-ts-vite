@@ -25,6 +25,6 @@ app
   .use(Icon)
   .use(Form)
   .use(router)
-  .use(pinia);
-// .use(BusPlugin);
+  .use(pinia)
+  .use(BusPlugin);
 app.mount("#app");

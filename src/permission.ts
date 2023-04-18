@@ -39,7 +39,6 @@ router.beforeEach((to: toRouteType, from, next) => {
       }
     } else if (!hasToken) {
       next(`/login`);
-      NProgress.done();
     }
   }
 });

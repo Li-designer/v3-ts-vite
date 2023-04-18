@@ -10,7 +10,7 @@ const test = {
       path: "/testPage",
       name: "TestPageOne",
       meta: {
-        title: "测试store",
+        title: "store/vueHooksPlus",
         keepAlive: true,
         showTab: false,
         showNav: true,

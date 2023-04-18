@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import AppMain from "./AppMain.vue";
-import TabBar from "./TabBar.vue";
-import NavBar from "./Nav.vue";
-const route = useRoute();
-const isShowNav: ComputedRef = computed(() => {
-  return route.meta.showNav;
-});
+  import AppMain from "./AppMain.vue";
+  import TabBar from "./TabBar.vue";
+  import NavBar from "./Nav.vue";
+  const route = useRoute();
+  const isShowNav: ComputedRef = computed(() => {
+    return route.meta.showNav;
+  });
 
-const isShowTab: ComputedRef = computed(() => {
-  return route.meta.showTab;
-});
+  const isShowTab: ComputedRef = computed(() => {
+    return route.meta.showTab;
+  });
 </script>
 
 <template>
@@ -21,7 +21,7 @@ const isShowTab: ComputedRef = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-.app-contian {
-  padding-top: 92px;
-}
+  .app-contian {
+    padding-top: 92px;
+  }
 </style>

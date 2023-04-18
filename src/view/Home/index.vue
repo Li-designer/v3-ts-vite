@@ -9,11 +9,6 @@
   const shallowValue = shallowRef({ count: 1 });
   const currentRoute = useRoute();
   const editTitle = () => {
-    // console.log(route, "route");
-    // if (!route.meta.cacheTitle) return showToast("请设置为动态标题!");
-    // route.meta.cacheTitle为true时可修改标题,为false显示meta.title
-    // appContext.config.globalProperties.$bus.emit("changeTitle", "修改标题");
-
     if (!unref(currentRoute.meta)?.cacheTitle) {
       return showToast("请设置为动态标题!");
     }

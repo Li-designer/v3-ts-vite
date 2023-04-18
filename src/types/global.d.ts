@@ -1,4 +1,4 @@
-import {type RouteComponent, type RouteLocationNormalized} from "vue-router";
+import { type RouteComponent, type RouteLocationNormalized } from "vue-router";
 
 /**
  * 全局类型声明，无需引入直接在 `.vue` 、`.ts` 、`.tsx` 文件使用即可获得类型提示
@@ -19,7 +19,7 @@ declare global {
       /* 是否显示头部 */
       showNav?: Boolean;
       /* 是否显示左箭头 */
-      showLeftArrow?: Boolean
+      showLeftArrow?: Boolean;
     };
   }
 
@@ -51,7 +51,7 @@ declare global {
       /* 是否显示头部 */
       showNav?: Boolean;
       /* 是否显示左箭头 */
-      showLeftArrow?: Boolean
+      showLeftArrow?: Boolean;
     };
     /** 子路由配置项 */
     children?: Array<RouteConfigsTable>;
@@ -60,14 +60,14 @@ declare global {
   /**
    *@description 错误状态码
    */
-  type ERROR_CODE = { [key: number]: string }
+  type ERROR_CODE = { [key: number]: string };
 
   /**
    * @description 全局属性挂载
    */
   interface ComponentCustomProperties {
-    $toast: () => Function,
-    $bus: () => Function
+    $toast: () => Function;
+    $bus: () => Function;
   }
 
   /**
