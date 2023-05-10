@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build:prod": "vue-tsc && vite build",
+    "build:prod": "vite build",
+    "ts": "vue-tsc",
     "preview": "vite preview",
     "lint": "eslint --ext .ts,.vue src",
     "prettier": "prettier --write ."

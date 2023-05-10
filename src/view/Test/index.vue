@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import HelloWorld from "@/components/HelloWorld.vue";
+  import useRequest from "@/hooks/useRequest";
   /*详见:https://inhiblab-core.gitee.io/docs/hooks/useRequest/*/
   //  vuehooks plus
 
