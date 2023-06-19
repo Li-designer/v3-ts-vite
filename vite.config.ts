@@ -119,7 +119,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "${path.resolve(__dirname, "src/styles/mixins.scss")}";`
+          additionalData: `@import "./src/styles/mixins.scss";`
         }
       }
     }
