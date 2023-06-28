@@ -9,7 +9,11 @@
   const filterKeepAliveRoute = (routes: any) => {
     return routes.reduce((acc: any[], cur: { children: any[]; name: any }) => {
       if (cur.children && cur.children.some((child: { meta: { keepAlive: any } }) => child.meta && child.meta.keepAlive)) {
-        acc.push(cur.name);
+        cur.children
+          .filter(item => item.meta.keepAlive)
+          .map(el => {
+            acc.push(el.name);
+          });
       }
       return acc;
     }, []);
