@@ -4,7 +4,12 @@
   const keepAliveList = computed(() => {
     return filterKeepAliveRoute(routes);
   });
-
+  /**
+   * 需要缓存的页面要加上
+   * defineOptions({
+   * name: "XXXX"
+   *   });
+   */
   // 过滤keepAlive路由
   const filterKeepAliveRoute = (routes: any) => {
     return routes.reduce((acc: any[], cur: { children: any[]; name: any }) => {
