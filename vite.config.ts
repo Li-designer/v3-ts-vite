@@ -18,11 +18,15 @@ const pathResolve = (dir: string): string => {
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   const env = loadEnv(mode, root, "");
+  const { VITE_BASE_URL } = env;
   return {
     base: command !== "serve" ? "./" : "/",
     root,
     // 服务端渲染
     server: {
+      hmr: {
+        overlay: false
+      },
       // 是否开启 https
       https: false,
       // 端口号
