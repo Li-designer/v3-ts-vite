@@ -30,7 +30,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       // 是否开启 https
       https: false,
       // 端口号
-      port: 9527,
+      port: 1114,
       host: "0.0.0.0",
       open: true,
       // 本地跨域代理 https://cn.vitejs.dev/config/server-options.html#server-proxy
