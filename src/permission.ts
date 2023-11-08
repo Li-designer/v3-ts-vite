@@ -22,25 +22,26 @@ router.beforeEach((to: toRouteType, from, next) => {
   const hasToken = getToken();
   // ! 权限
   NProgress.start();
-  if (whiteList.indexOf(to.path) !== -1) {
-    next();
-  } else {
-    if (hasToken) {
-      if (to.meta.auth && to.meta.auth.indexOf(getRole) === -1) {
-        next(from.path);
-        showNotify({ type: "danger", message: "没有权限!" });
-        NProgress.done();
-      } else if (!to.meta.auth && to.name) {
-        next();
-      } else if (!to.name) {
-        next(`/404?redirect=${to.path}`);
-      } else {
-        next();
-      }
-    } else if (!hasToken) {
-      next(`/login`);
-    }
-  }
+  next();
+  // if (whiteList.indexOf(to.path) !== -1) {
+  //   next();
+  // } else {
+  //   if (hasToken) {
+  //     if (to.meta.auth && to.meta.auth.indexOf(getRole) === -1) {
+  //       next(from.path);
+  //       showNotify({ type: "danger", message: "没有权限!" });
+  //       NProgress.done();
+  //     } else if (!to.meta.auth && to.name) {
+  //       next();
+  //     } else if (!to.name) {
+  //       next(`/404?redirect=${to.path}`);
+  //     } else {
+  //       next();
+  //     }
+  //   } else if (!hasToken) {
+  //     next(`/login`);
+  //   }
+  // }
 });
 
 router.afterEach(to => {

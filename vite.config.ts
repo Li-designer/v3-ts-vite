@@ -14,6 +14,7 @@ const root: string = process.cwd();
 const pathResolve = (dir: string): string => {
   return resolve(__dirname, ".", dir);
 };
+const timeStamp = new Date().getTime();
 // console.log(process.env, process.env.VITE_PORT, "ENV");
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
@@ -114,9 +115,9 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         },
         // 静态资源分类打包
         output: {
-          chunkFileNames: "static/js/[name]-[hash].js",
-          entryFileNames: "static/js/[name]-[hash].js",
-          assetFileNames: "static/[ext]/[name]-[hash].[ext]"
+          chunkFileNames: `static/js/[name]-[hash]-${timeStamp}.js`,
+          entryFileNames: `static/js/[name]-[hash]-${timeStamp}.js`,
+          assetFileNames: `static/[ext]/[name]-[hash]-${timeStamp}.[ext]`
         }
       }
     },
@@ -125,7 +126,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         scss: {
           additionalData: `@import "./src/styles/mixins.scss";`
         }
-      }
+      },
     }
   };
 };

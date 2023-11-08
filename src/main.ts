@@ -9,6 +9,7 @@ import "@/permission";
 import { Button, Form, Field, NavBar, Search, Tabbar, TabbarItem, Toast, CellGroup, Icon } from "vant";
 import { createPinia } from "pinia";
 import BusPlugin from "@/utils/bus";
+import "video.js/dist/video-js.css";
 const app = createApp(App);
 
 const pinia = createPinia();
