@@ -7,5 +7,9 @@ module.exports = {
       },
       propList: ["*"]
     }
+    // 'postcss-pxtorem': {
+    //   rootValue: 37.5,
+    //   propList: ['*'],
+    // },
   }
 };
