@@ -26,7 +26,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     // 服务端渲染
     server: {
       hmr: {
-        overlay: false
+        overlay: true
       },
       // 是否开启 https
       https: false,
@@ -126,7 +126,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         scss: {
           additionalData: `@import "./src/styles/mixins.scss";`
         }
-      },
+      }
     }
   };
 };
