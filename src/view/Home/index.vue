@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { userLogin } from "@/api/login";
+  import { userLogin, userTest } from "@/api/login";
   import useInterval from "@/hooks/useInterval";
   import useRequest from "@/hooks/useRequest";
   import useDayjs from "@/hooks/useDayjs";
@@ -41,6 +41,10 @@
     const { timeFormatValue } = useDayjs(type, time);
     console.log(timeFormatValue, type, time);
   };
+  const getTest = async () => {
+    const res = await userTest({});
+  };
+  getTest();
 </script>
 
 <template>
@@ -70,6 +74,7 @@
       <van-button plain type="primary" @click="changeTime('format', 1548345600000)">时间戳转换成字符串</van-button>
       <van-button plain type="primary" @click="changeTime('unix', '2019-01-25')">转换成时间戳10位</van-button>
     </div>
+    <!-- pdf.js -->
   </div>
 </template>
 

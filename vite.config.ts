@@ -36,11 +36,11 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       open: true,
       // 本地跨域代理 https://cn.vitejs.dev/config/server-options.html#server-proxy
       proxy: {
-        // "/expert-adventure": {
-        //   target: "http://localhost:3000",
-        //   changeOrigin: true,
-        //   rewrite: path => path.replace(/^\/expert-adventure/, "/expert-adventure")
-        // },
+        "/expert-adventure": {
+          target: "http://localhost:3000",
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/expert-adventure/, "/expert-adventure")
+        }
       }
     },
     plugins: [
