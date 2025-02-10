@@ -18,11 +18,21 @@
 - `vue`,`vue-router`,`pinia`,`vueHook Plus` 无需手动引入
 
 ## VueHook Plus
-- https://inhiblab-core.gitee.io/docs/hooks/
+
+- <https://inhiblab-core.gitee.io/docs/hooks/>
 
 ## 一键格式化
+
 - `npm run prettier`
 - `npm run lint`
+
+## 修改node_modules中的第三方包
+>
+> **Tip**  
+> 修改之后使用命令 `npx patch-package packageName` 生成`patches`文件
+>node_modules包被覆盖之后运行 `postintsll` 命令恢复
+>这里用video.js包作测试
+>
 
 ## 项目结构
 

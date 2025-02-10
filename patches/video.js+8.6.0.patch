@@ -1,0 +1,28 @@
+diff --git a/node_modules/video.js/README.md b/node_modules/video.js/README.md
+index 899cb6e..0262d15 100644
+--- a/node_modules/video.js/README.md
++++ b/node_modules/video.js/README.md
+@@ -13,10 +13,12 @@
+ 
+ ## Table of Contents
+ 
+-* [Quick Start](#quick-start)
+-* [Contributing](#contributing)
+-* [Code of Conduct](#code-of-conduct)
+-* [License](#license)
++- [Video.js - HTML5 Video Player](#videojs---html5-video-player)
++  - [Table of Contents](#table-of-contents)
++  - [Quick Start](#quick-start)
++  - [Contributing](#contributing)
++  - [Code of Conduct](#code-of-conduct)
++  - [License](#license)
+ 
+ ## Quick Start
+ 
+@@ -158,3 +160,5 @@ Video.js is [licensed][license] under the Apache License, Version 2.0.
+ [vjs]: https://videojs.com
+ 
+ [coc]: CODE_OF_CONDUCT.md
++
++`测试包的修改`
+\ No newline at end of file
