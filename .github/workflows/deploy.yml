@@ -1,48 +1,48 @@
-name: Deploy to Vercel
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches: [main]  # 仅监听main分支的推送
 
 jobs:
-  build-and-deploy:
+  build-test-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    # 1. 拉取代码
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 20
-          cache: 'pnpm'
+    # 2. 安装Node.js环境
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+        cache: 'npm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+    # 3. 安装依赖（利用缓存加速）
+    - name: Install dependencies
+      run: npm ci
 
-      - name: Cache pnpm modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            .pnpm-store
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+    # 4. 执行代码质量检查
+    - name: Lint code
+      run: npm run lint
 
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+    # 5. 运行单元测试
+    - name: Run tests
+      run: npm test
 
-      - name: Build Project
-        run: pnpm run build:prod
-        env:
-          VITE_API_URL: ${{ secrets.PROD_API_URL }}
+    # 6. 构建生产包
+    - name: Build project
+      run: npm run build
+      env:
+        VITE_API_BASE: ${{ secrets.PROD_API_URL }}  # 注入环境变量
 
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          build-args: --prod
-          scope: ${{ secrets.VERCEL_ORG_ID }}
+    # 7. 部署到Vercel
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v25
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}  # 安全存储的Token
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        scope: ${{ secrets.VERCEL_ORG_ID }}
