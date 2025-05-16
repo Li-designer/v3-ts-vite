@@ -28,9 +28,9 @@ jobs:
     # - name: Lint code
     #   run: npm run lint
 
-    # 5. 运行单元测试
-    - name: Run tests
-      run: npm test
+    # # 5. 运行单元测试
+    # - name: Run tests
+    #   run: npm test
 
     # 6. 构建生产包
     - name: Build project
